@@ -11,11 +11,12 @@ import pytz
 
 import time
 
+#Erased Personal Info here for Privacy
 reddit = praw.Reddit(
-    client_id = "8ZHsXepRnow4pg", 
-    client_secret = "s6dDHt-iVmJIFvfPR90-0bVTexterA", 
-    username = "aveni121",
-    password = "Slayer18346150!", 
+    client_id = "ID_HERE", 
+    client_secret = "SECRET_KEY_HERE", 
+    username = "USERNAME_HERE", 
+    password = "PASSWORD_HERE",
     user_agent = "something")
 
 bot = commands.Bot(command_prefix = '.', intents= Intents.all())
@@ -27,7 +28,7 @@ bot = commands.Bot(command_prefix = '.', intents= Intents.all())
 #Greets the member of the discord server in the general channel everytime they go online
 @ bot.event
 async def on_member_update(before, after):
-    channel = bot.get_channel(766944488773648418)
+    channel = bot.get_channel(CHANNEL_ID_GOES_HERE) #Erased Personal Info here for Privacy
     if str(before.status) == "offline":
         if str(after.status) == "online":
             await channel.send("Hello {} you are the most beautiful person in the world".format(after.name))
@@ -175,4 +176,4 @@ async def reason(ctx, i = 1):
         i -= 1
         time.sleep(5)
 
-bot.run("NzgyNDQwNTIwMDU5ODQ2Njg2.X8MOhQ.rmzyoeHk6ocP_KV8mqM9THtzDy8")
+bot.run("INSERT_BOT_TOKEN_HERE") #Erased Personal Info here for Privacy
